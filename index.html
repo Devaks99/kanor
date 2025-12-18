@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/logo do kanor.png" type="image/x-icon">
+  <title>Kanor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="img/Logo kanor inicio.png" alt="Logo Kanor" class="logo">
+    <h1>Kanor</h1>
+    <h3>Kanban de Prioridades</h3>
+    <p>Organize. Priorize. Execute.</p>
+  </header>
+
+  <section class="form-section">
+    <h2>Nova Tarefa</h2>
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Título da tarefa" required />
+      <textarea id="description" placeholder="Descrição"></textarea>
+
+      <div class="row">
+        <select id="column">
+          <option value="alta">Alta Prioridade</option>
+          <option value="andamento">Atividades em Andamento</option>
+          <option value="sobdemanda">Sob Demanda</option>
+        </select>
+
+        <select id="status">
+          <option value="nao">Não iniciado</option>
+          <option value="em">Em andamento</option>
+          <option value="concluido">Concluído</option>
+        </select>
+      </div>
+
+      <div class="tags">
+        <label><input type="checkbox" value="marketing"> Marketing</label>
+        <label><input type="checkbox" value="comercial"> Comercial</label>
+        <label><input type="checkbox" value="dev"> Dev</label>
+        <label><input type="checkbox" value="urgente"> Urgente</label>
+      </div>
+
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+  </section>
+
+  <main class="kanban">
+    <div class="column" data-column="alta">
+      <h3>🟥 Alta Prioridade</h3>
+      <div class="task-list"></div>
+    </div>
+
+    <div class="column" data-column="andamento">
+      <h3>🟨 Atividades em Andamento</h3>
+      <div class="task-list"></div>
+    </div>
+
+    <div class="column" data-column="sobdemanda">
+      <h3>🟦 Sob Demanda</h3>
+      <div class="task-list"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
